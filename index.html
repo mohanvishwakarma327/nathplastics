@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nath Plastics | Khalilabad</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(180deg, #007bff, #66b2ff);
+      color: white;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: white;
+      padding: 8px;
+    }
+
+    header h1 {
+      margin-top: 15px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #eef5ff;
+    }
+
+    nav {
+      background-color: #005fcc;
+      text-align: center;
+      padding: 0.6rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .about, .contact {
+      background-color: #f0f8ff;
+      border-radius: 10px;
+      margin: 1rem auto;
+      max-width: 800px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background-color: #005fcc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: white;
+    }
+
+    .contact-info {
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    /* Floating Buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .floating-buttons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 50px;
+      padding: 14px 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .call-btn {
+      background-color: #007bff;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+    }
+
+    .floating-buttons a:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .gallery img {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpeg" alt="Nath Plastics Logo" />
+    <h1>Nath Plastics</h1>
+    <p>Manufacturers of high-quality plastic products</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Our Work</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      <strong>Nath Plastics</strong> is a trusted manufacturer of durable and high-quality plastic products.  
+      Located in the Industrial Area of Khalilabad, Sant Kabir Nagar, we are committed to delivering reliable solutions that meet diverse industrial and household needs.
+    </p>
+    <p><b>Owner:</b> Santosh</p>
+  </section>
+
+  <section id="work">
+    <h2>Our Work</h2>
+    <p>We design and manufacture a wide range of plastic items for various industries. (You can add product descriptions or categories here.)</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Product 1">
+      <img src="photo2.jpg" alt="Product 2">
+      <img src="photo3.jpg" alt="Product 3">
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      📞 <strong>+91 8382805364</strong><br>
+      ✉️ nathplasticsindustries@gmail.com<br>
+      📍 Industrial Area, Khalilabad, Sant Kabir Nagar, 272175
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Nath Plastics | Designed by Santosh
+  </footer>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-buttons">
+    <a href="tel:+918382805364" class="call-btn">📞 Call Now</a>
+    <a href="https://wa.me/918382805364?text=Hello%20Nath%20Plastics%2C%20I%20am%20interested%20in%20your%20products." 
+       target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+  </div>
+
+</body>
+</html>
