@@ -12,6 +12,7 @@
       color: #333;
     }
 
+    /* HEADER */
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
@@ -19,12 +20,12 @@
       color: white;
     }
 
-    header img.logo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: white;
-      padding: 8px;
+    header .logo {
+      width: 160px;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      margin-bottom: 0.5rem;
     }
 
     header h1 {
@@ -38,12 +39,14 @@
       color: #eef5ff;
     }
 
+    /* BANNER */
     .banner {
       width: 100%;
       height: 300px;
       object-fit: cover;
     }
 
+    /* NAVIGATION */
     nav {
       background-color: #005fcc;
       text-align: center;
@@ -61,6 +64,7 @@
       text-decoration: underline;
     }
 
+    /* SECTIONS */
     section {
       padding: 2rem 1.5rem;
       max-width: 1000px;
@@ -84,6 +88,7 @@
       margin: auto;
     }
 
+    /* PRODUCTS */
     .product {
       margin-bottom: 2rem;
       text-align: center;
@@ -104,6 +109,7 @@
       transform: scale(1.05);
     }
 
+    /* GALLERY */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -126,7 +132,7 @@
       transform: scale(1.05);
     }
 
-    /* Lightbox */
+    /* LIGHTBOX */
     #lightbox {
       position: fixed;
       top: 0;
@@ -148,10 +154,6 @@
       animation: fadeIn 0.3s ease;
     }
 
-    #lightbox:target {
-      display: flex;
-    }
-
     #lightbox span {
       position: absolute;
       top: 20px;
@@ -166,6 +168,7 @@
       to {opacity: 1;}
     }
 
+    /* CONTACT + FOOTER */
     footer {
       background-color: #005fcc;
       text-align: center;
@@ -180,6 +183,7 @@
       text-align: center;
     }
 
+    /* FLOATING BUTTONS */
     .floating-buttons {
       position: fixed;
       bottom: 20px;
@@ -212,6 +216,7 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <img src="logo.jpeg" class="logo" alt="Nath Plastics Logo" />
     <h1>Nath Plastics Industries</h1>
@@ -220,6 +225,7 @@
 
   <!-- <img src="factory-banner.jpg" alt="Factory Banner" class="banner" /> -->
 
+  <!-- NAVBAR -->
   <nav>
     <a href="#about">About</a>
     <a href="#products">Products</a>
@@ -228,19 +234,21 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ABOUT SECTION -->
   <section id="about">
     <h2>About Us</h2>
     <p>
       <strong>Nath Plastics Industries</strong> has been delivering high-quality Masterbatch and co-creating 
       innovative, reliable, and high-quality solutions for the plastic industry. Our machines ensure the correct 
-      combination of raw materials and hardware to produce Masterbatch exactly matching the customer’s needs.
+      combination of raw materials and hardware to produce Masterbatch exactly matching customer needs.
     </p>
     <p>
       With an experienced team, we provide consistent and cost-effective solutions to meet current and future 
-      industry needs. We manufacture all types of colours — black, white, additive, metallic, and transparent Masterbatch.
+      industry demands. We manufacture all types of colours — black, white, metallic, transparent, and additive Masterbatch.
     </p>
   </section>
 
+  <!-- PRODUCTS SECTION -->
   <section id="products">
     <h2>Our Products</h2>
 
@@ -250,41 +258,39 @@
         Black Masterbatch has various levels of carbon black content in its composition that makes it
         suitable for use as the black pigment in many plastic applications.
       </p>
-      <img src="black-masterbatch.jpg" alt="Black Masterbatch">
+      <img src="black-masterbatch.jpg" alt="Black Masterbatch" onclick="openLightbox(this.src)">
     </div>
 
     <div class="product">
       <h3>WHITE MASTERBATCH</h3>
       <p>
         White Masterbatch has wide applications in the plastic industry for providing excellent
-        whiteness to the products. Besides this, it is also responsible for the brightness and opacity
-        in the final plastic product.
+        whiteness to the products. It is also responsible for brightness and opacity in the
+        final plastic product.
       </p>
-      <img src="white-masterbatch.jpg" alt="White Masterbatch">
+      <img src="white-masterbatch.jpg" alt="White Masterbatch" onclick="openLightbox(this.src)">
     </div>
 
     <div class="product">
       <h3>COLOR MASTERBATCH</h3>
       <p>
-        Color Masterbatch are the best to choose as it imparts light fastness, thermal stability and
-        color consistency to the plastic products. Composed of high-grade pigments, these Masterbatch
-        are available in approximately 200 shades of color.
+        Color Masterbatch imparts light fastness, thermal stability, and color consistency to plastic
+        products. Composed of high-grade pigments, these are available in approximately 200 shades.
       </p>
-      <img src="color-masterbatch.jpg" alt="Color Masterbatch">
+      <img src="color-masterbatch.jpg" alt="Color Masterbatch" onclick="openLightbox(this.src)">
     </div>
 
     <div class="product">
       <h3>ADDITIVE MASTERBATCH</h3>
       <p>
-        There are many advantages of using this Masterbatch; it prevents degradation of plastic caused
-        due to UV light and can also reduce the product weight and resin consumption. Range of Additive
-        Masterbatch are available for various implementations including Optical Brightener Masterbatch,
-        UV Masterbatch, and Slip Masterbatch.
+        Additive Masterbatch prevents degradation of plastic caused by UV light and reduces resin
+        consumption. Options include Optical Brightener, UV, and Slip Masterbatch for enhanced performance.
       </p>
-      <img src="additive-masterbatch.jpg" alt="Additive Masterbatch">
+      <img src="additive-masterbatch.jpg" alt="Additive Masterbatch" onclick="openLightbox(this.src)">
     </div>
   </section>
 
+  <!-- INDUSTRIES -->
   <section id="industries">
     <h2>Industries & Applications</h2>
     <ul>
@@ -300,6 +306,7 @@
     <p><strong>Applications:</strong> Woven Sacks, Tarpaulin, Carry Bags, Kisan Pipes, Water Tanks, Injection Moulding, HDPE Pipes & Fittings.</p>
   </section>
 
+  <!-- GALLERY -->
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
@@ -311,6 +318,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-info">
@@ -322,16 +330,18 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     © 2025 Nath Plastics Industries | Designed by Santosh
   </footer>
 
+  <!-- FLOATING CALL/WHATSAPP BUTTONS -->
   <div class="floating-buttons">
     <a href="tel:+918382805364" class="call-btn">📞 Call Now</a>
     <a href="https://wa.me/918382805364?text=Hello%20Nath%20Plastics%2C%20I%20am%20interested%20in%20your%20products." target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
   </div>
 
-  <!-- Lightbox -->
+  <!-- LIGHTBOX -->
   <div id="lightbox">
     <span onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Full View">
