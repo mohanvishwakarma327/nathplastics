@@ -96,6 +96,7 @@
       margin-top: 1rem;
       object-fit: cover;
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      cursor: pointer;
       transition: transform 0.3s;
     }
 
@@ -117,11 +118,52 @@
       border-radius: 10px;
       object-fit: cover;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      cursor: pointer;
       transition: transform 0.3s;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      animation: fadeIn 0.3s ease;
+    }
+
+    #lightbox:target {
+      display: flex;
+    }
+
+    #lightbox span {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     footer {
@@ -189,19 +231,13 @@
   <section id="about">
     <h2>About Us</h2>
     <p>
-      We at <strong>Nath Plastics Industries</strong> have been delivering high-quality Masterbatch
-      and co-creating innovative, reliable, and high-quality solutions for the plastic industry.
-      Our machines ensure the correct combination of raw materials and hardware to produce
-      Masterbatch exactly matching the customer’s needs.
+      <strong>Nath Plastics Industries</strong> has been delivering high-quality Masterbatch and co-creating 
+      innovative, reliable, and high-quality solutions for the plastic industry. Our machines ensure the correct 
+      combination of raw materials and hardware to produce Masterbatch exactly matching the customer’s needs.
     </p>
     <p>
-      With an experienced team, we are delivering high-quality, consistent and cost-effective
-      solutions to cater to the current and future needs of our customers for both standard
-      and specialty solutions.
-    </p>
-    <p>
-      All types of colours, black, white and additive Masterbatch are manufactured by us.
-      Metallic and transparent colours are also provided.
+      With an experienced team, we provide consistent and cost-effective solutions to meet current and future 
+      industry needs. We manufacture all types of colours — black, white, additive, metallic, and transparent Masterbatch.
     </p>
   </section>
 
@@ -267,11 +303,11 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="product1.jpg" alt="Product Image 1">
-      <img src="product2.jpg" alt="Product Image 2">
-      <img src="product3.jpg" alt="Factory Production">
-      <img src="product4.jpg" alt="HDPE Pipes">
-      <img src="product5.jpg" alt="Color Masterbatch Samples">
+      <img src="product1.jpg" alt="Gallery 1" onclick="openLightbox(this.src)">
+      <img src="product2.jpg" alt="Gallery 2" onclick="openLightbox(this.src)">
+      <img src="product3.jpg" alt="Gallery 3" onclick="openLightbox(this.src)">
+      <img src="product4.jpg" alt="Gallery 4" onclick="openLightbox(this.src)">
+      <img src="product5.jpg" alt="Gallery 5" onclick="openLightbox(this.src)">
     </div>
   </section>
 
@@ -294,6 +330,22 @@
     <a href="tel:+918382805364" class="call-btn">📞 Call Now</a>
     <a href="https://wa.me/918382805364?text=Hello%20Nath%20Plastics%2C%20I%20am%20interested%20in%20your%20products." target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
   </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = src;
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
