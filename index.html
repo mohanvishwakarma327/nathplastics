@@ -1,360 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nath Plastics Industries | Masterbatch Manufacturers</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nath Plastics Industries | Masterbatch Manufacturers</title>
 
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="Nath Plastics Industries — Manufacturers of high-quality Masterbatch & color solutions. Black, White, Color and Additive Masterbatch. Industrial Area, Khalilabad, UP.">
-  <meta name="keywords" content="Nath Plastics, Masterbatch, Color Masterbatch, Black Masterbatch, White Masterbatch, Additive Masterbatch, Plastic Pigments, Khalilabad, Sant Kabir Nagar, Plastic Manufacturer">
-  <link rel="canonical" href="https://nathplastics.com/">
+<!-- SEO -->
+<meta name="description" content="Nath Plastics Industries – Manufacturer of Black, White, Color & Additive Masterbatch. Khalilabad, UP.">
+<link rel="canonical" href="https://nathplastics.com/">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
+<style>
+:root {
+  --blue: #0a5fd8;
+  --dark: #0f172a;
+  --light: #f8fafc;
+}
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      background: linear-gradient(180deg, #007bff, #66b2ff);
-      color: white;
-    }
+* { box-sizing: border-box; }
 
-    header .logo {
-      width: 180px;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
+html { scroll-behavior: smooth; }
 
-    header h1 {
-      margin-top: 10px;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--light);
+  color: #333;
+}
 
-    header p {
-      font-size: 1.1rem;
-      color: #eef5ff;
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0a5fd8, #4da3ff);
+  color: #fff;
+}
 
-    /* BANNER */
-    .banner {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-    }
+header img {
+  width: 160px;
+  animation: zoomIn 1s ease;
+}
 
-    /* NAVBAR */
-    nav {
-      background-color: #005fcc;
-      text-align: center;
-      padding: 0.7rem;
-    }
+header h1 {
+  margin: 1rem 0 .3rem;
+  font-size: 2.3rem;
+}
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+header p {
+  opacity: .9;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: .8rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  z-index: 100;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 2rem 1.5rem;
-      max-width: 1000px;
-      margin: auto;
-      line-height: 1.6;
-    }
+nav a {
+  margin: 0 14px;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
 
-    h2 {
-      color: #005fcc;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  left: 0;
+  bottom: -5px;
+  transition: .3s;
+}
 
-    h3 {
-      color: #007bff;
-    }
+nav a:hover::after { width: 100%; }
 
-    /* PRODUCTS */
-    .product {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
+/* SECTIONS */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 1.2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
 
-    .product img {
-      width: 320px;
-      height: 220px;
-      border-radius: 10px;
-      margin-top: 1rem;
-      object-fit: cover;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .product img:hover {
-      transform: scale(1.05);
-    }
+h2 {
+  text-align: center;
+  color: var(--dark);
+  margin-bottom: 2rem;
+}
 
-    /* GALLERY */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 2rem;
+}
 
-    .gallery img {
-      width: 280px;
-      height: 200px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+.product {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transition: .4s;
+}
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+.product:hover {
+  transform: translateY(-10px);
+}
 
-    /* LIGHTBOX */
-    #lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
+.product img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+}
 
-    #lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-      animation: fadeIn 0.3s ease;
-    }
+.product h3 {
+  margin: 1rem 0 .5rem;
+  color: var(--blue);
+}
 
-    #lightbox span {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.2rem;
+}
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
+.gallery img {
+  width: 100%;
+  height: 200px;
+  border-radius: 14px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: .4s;
+}
 
-    /* CONTACT + FOOTER */
-    footer {
-      background-color: #005fcc;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: white;
-    }
+.gallery img:hover {
+  transform: scale(1.06);
+}
 
-    .contact-info {
-      line-height: 1.8;
-      font-size: 1.1rem;
-      text-align: center;
-    }
+/* CONTACT */
+.contact-info {
+  text-align: center;
+  font-size: 1.1rem;
+}
 
-    /* FLOATING BUTTONS */
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-    }
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
 
-    .floating-buttons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 50px;
-      padding: 14px 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background 0.3s, transform 0.2s;
-    }
+/* FLOATING BUTTONS */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-    .call-btn { background-color: #007bff; }
-    .whatsapp-btn { background-color: #25D366; }
-    .floating-buttons a:hover { transform: scale(1.05); opacity: 0.9; }
-    .email-btn { background-color: #D44638; }
+.floating-buttons a {
+  padding: 14px 20px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+  transition: .3s;
+}
 
-  </style>
+.call { background:#0a5fd8; }
+.whatsapp { background:#25D366; }
+.email { background:#D44638; }
+
+.floating-buttons a:hover { transform: scale(1.1); }
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+#lightbox span {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes zoomIn {
+  from { transform: scale(.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="logo.jpeg" class="logo" alt="Nath Plastics Logo" />
-    <h1>Nath Plastics Industries</h1>
-    <p>Colouring for Life — High Quality Masterbatch Solutions</p>
-  </header>
+<header>
+  <img src="logo.jpeg" alt="Nath Plastics Logo">
+  <h1>Nath Plastics Industries</h1>
+  <p>Colouring for Life – High Quality Masterbatch Solutions</p>
+</header>
 
-  <!-- <img src="factory-banner.jpg" alt="Factory Banner" class="banner" /> -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#industries">Industries</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Nath Plastics Industries has been delivering high-quality Masterbatch and co-creating innovative, reliable, and high-quality solutions for the plastic industry. Our machines ensure the correct combination of raw materials and hardware to produce Masterbatch exactly matching customer needs.
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      <strong>Nath Plastics Industries</strong> has been delivering high-quality Masterbatch and co-creating 
-      innovative, reliable, and high-quality solutions for the plastic industry. Our machines ensure the correct 
-      combination of raw materials and hardware to produce Masterbatch exactly matching customer needs.
-    </p>
-    <p>
-      With an experienced team, we provide consistent and cost-effective solutions to meet current and future 
-      industry demands. We manufacture all types of colours — black, white, metallic, transparent, and additive Masterbatch.
-    </p>
-  </section>
+With an experienced team, we provide consistent and cost-effective solutions to meet current and future industry demands. We manufacture all types of colours — black, white, metallic, transparent, and additive Masterbatch.
+  </p>
+</section>
 
-  <!-- PRODUCTS SECTION -->
-  <section id="products">
-    <h2>Our Products</h2>
-
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="products">
     <div class="product">
-      <h3>BLACK MASTERBATCH</h3>
+      <img src="gallery2.jpeg" onclick="openLightbox(this.src)">
+      <h3>Black Masterbatch</h3>
       <p>Black Masterbatch has various levels of carbon black content in its composition that makes it suitable for use as the black pigment in many plastic applications.</p>
-      <img src="gallery2.jpeg" alt="Black Masterbatch" onclick="openLightbox(this.src)">
     </div>
-
     <div class="product">
-      <h3>WHITE MASTERBATCH</h3>
+      <img src="gallery1.jpeg" onclick="openLightbox(this.src)">
+      <h3>White Masterbatch</h3>
       <p>White Masterbatch has wide applications in the plastic industry for providing excellent whiteness to the products. It is also responsible for brightness and opacity in the final plastic product.</p>
-      <img src="gallery1.jpeg" alt="White Masterbatch" onclick="openLightbox(this.src)">
     </div>
-
     <div class="product">
-      <h3>COLOR MASTERBATCH</h3>
+      <img src="gallery4.jpeg" onclick="openLightbox(this.src)">
+      <h3>Color Masterbatch</h3>
       <p>Color Masterbatch imparts light fastness, thermal stability, and color consistency to plastic products. Composed of high-grade pigments, these are available in approximately 200 shades.</p>
-      <img src="gallery4.jpeg" alt="Color Masterbatch" onclick="openLightbox(this.src)">
     </div>
-
     <div class="product">
-      <h3>ADDITIVE MASTERBATCH</h3>
+      <img src="gallery3.jpeg" onclick="openLightbox(this.src)">
+      <h3>Additive Masterbatch</h3>
       <p>Additive Masterbatch prevents degradation of plastic caused by UV light and reduces resin consumption. Options include Optical Brightener, UV, and Slip Masterbatch for enhanced performance.</p>
-      <img src="gallery3.jpeg" alt="Additive Masterbatch" onclick="openLightbox(this.src)">
     </div>
-  </section>
-
-  <!-- INDUSTRIES -->
-  <section id="industries">
-    <h2>Industries & Applications</h2>
-    <ul>
-      <li>Agriculture</li>
-      <li>Household Appliances</li>
-      <li>Pipe Industry</li>
-      <li>Packaging Industry</li>
-      <li>Wires & Cables</li>
-      <li>Automotive & Transportation</li>
-      <li>Health Care & Pharma</li>
-    </ul>
-    <p><strong>Applications:</strong> Woven Sacks, Tarpaulin, Carry Bags, Kisan Pipes, Water Tanks, Injection Moulding, HDPE Pipes & Fittings.</p>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="product1.jpg" alt="Gallery 1" onclick="openLightbox(this.src)">
-      <img src="product2.jpg" alt="Gallery 2" onclick="openLightbox(this.src)">
-      <img src="product3.jpg" alt="Gallery 3" onclick="openLightbox(this.src)">
-      <img src="product4.jpg" alt="Gallery 4" onclick="openLightbox(this.src)">
-      <img src="product5.jpg" alt="Gallery 5" onclick="openLightbox(this.src)">
-
-      <!-- Additional gallery images -->
-    <img src="gallery1.jpeg" alt="Gallery Image 1" onclick="openLightbox(this.src)">
-    <img src="gallery2.jpeg" alt="Gallery Image 2" onclick="openLightbox(this.src)">
-    <img src="gallery3.jpeg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
-    <img src="gallery4.jpeg" alt="Gallery Image 4" onclick="openLightbox(this.src)">
-    <!-- <img src="gallery5.jpg" alt="Gallery Image 5" onclick="openLightbox(this.src)">
-    <img src="gallery6.jpg" alt="Gallery Image 6" onclick="openLightbox(this.src)"> -->
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-      <p><strong>Nath Plastics Industries</strong></p>
-      <p>📞 +91 8382805364</p>
-      <p>✉️ <a href="mailto:nathplasticsindustries@gmail.com">sales@nathplastic.com</a></p>
-      <p>🏭 Industrial Area, Khalilabad, Matihana, Sant Kabir Nagar, UP – 272175</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Nath Plastics Industries. All rights reserved.
-  </footer>
-
-  <!-- FLOATING CALL/WHATSAPP BUTTONS -->
-  <div class="floating-buttons">
-    <a href="tel:+918382805364" class="call-btn">📞 Call Now</a>
-    <a href="https://wa.me/918382805364?text=Hello%20Nath%20Plastics%2C%20I%20am%20interested%20in%20your%20products." target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
-    
-    <!-- Gmail compose link → works on all phones -->
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@nathplastics.com" target="_blank" class="email-btn">
-      ✉️ Email
-    </a>
   </div>
+</section>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <span onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Full View">
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="gallery1.jpeg" onclick="openLightbox(this.src)">
+    <img src="gallery2.jpeg" onclick="openLightbox(this.src)">
+    <img src="gallery3.jpeg" onclick="openLightbox(this.src)">
+    <img src="gallery4.jpeg" onclick="openLightbox(this.src)">
   </div>
+</section>
 
-  <script>
-    function openLightbox(src) {
-      document.getElementById("lightbox").style.display = "flex";
-      document.getElementById("lightbox-img").src = src;
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <p><strong>Nath Plastics Industries</strong></p>
+    <p>📞 +91 8382805364</p>
+    <p>✉️ sales@nathplastics.com</p>
+    <p>📍 Khalilabad, Sant Kabir Nagar, UP</p>
+  </div>
+</section>
+
+<footer>© 2025 Nath Plastics Industries</footer>
+
+<div class="floating-buttons">
+  <a href="tel:+918382805364" class="call">📞 Call</a>
+  <a href="https://wa.me/918382805364" class="whatsapp">💬 WhatsApp</a>
+  <a href="https://mail.google.com/mail/?view=cm&to=sales@nathplastics.com" class="email" target="_blank">✉️ Email</a>
+</div>
+
+<div id="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=src;
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+
+/* Scroll animation */
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top<window.innerHeight-100){
+      sec.classList.add("show");
     }
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  </script>
+  });
+});
+</script>
 
 </body>
 </html>
