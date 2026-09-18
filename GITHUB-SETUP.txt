@@ -1,0 +1,16 @@
+NATH PLASTICS - STATIC GITHUB VERSION
+
+PHP has been removed. The enquiry form opens the visitor's email app and prepares an email to:
+sales@nathplastics.com
+
+CNAME:
+nathplastic.com
+
+IMPORTANT:
+GitHub Pages is a static hosting service. GitHub's current documentation says Pages is not intended or allowed to be used as free web hosting for an online business or a website primarily directed at commercial transactions.
+
+Use this package as a GitHub code/demo repository or for a non-commercial project. For the production Nath Plastics business site, use Hostinger or another appropriate web host.
+
+After uploading to GitHub, configure Pages in:
+Repository -> Settings -> Pages
+and configure the custom domain/DNS as instructed by GitHub.
